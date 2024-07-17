@@ -2,7 +2,6 @@ import speech_recognition as sr
 import json
 import os
 import boto3
-import speech_recognition as sr
 
 
 def getS3File(file):
