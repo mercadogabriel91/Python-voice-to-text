@@ -1,0 +1,20 @@
+service: aws-python # NOTE: update this with your service name
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: python3.9
+
+plugins:
+  - serverless-offline
+
+functions:
+  processAudio:
+    handler: handler.processAudio
+    timeout: 180 # Set the timeout to 3 minutes
+    events:
+      - http:
+          path: /
+          method: POST
+          cors: true
